@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Stock Control Demo
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stockBatch
+    username: postgres
+    password: postgres
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+batch:
+  stockCron: 0 */1 * * * *
